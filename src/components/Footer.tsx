@@ -1,4 +1,5 @@
 import { Code2, Mail, Phone, MapPin, Github, Linkedin, Twitter, ArrowUp } from 'lucide-react';
+import logo from '@/assets/logo.png';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -67,6 +68,7 @@ const Footer = () => {
               <div className="p-2 bg-primary rounded-lg">
                 <Code2 className="h-6 w-6 text-white" />
               </div>
+              <img src={logo} alt="Logo" className="h-8 w-8" />
               <span className="text-2xl font-bold">
                 Code <span className="text-primary-light">Bex</span>
               </span>

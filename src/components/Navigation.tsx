@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, Code2 } from 'lucide-react';
+import logo from '@/assets/logo.png';
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -39,8 +40,9 @@ const Navigation = () => {
             <div className="p-2 bg-primary rounded-lg">
               <Code2 className="h-6 w-6 text-white" />
             </div>
+            <img src={logo} alt="Logo" className="h-8 w-8" />
             <span className={`text-2xl font-bold ${isScrolled ? 'text-foreground' : 'text-white'}`}>
-              Code <span className="text-primary">Bex</span>
+              Code <span className={isScrolled ? 'text-primary' : 'text-white'}>Bex</span>
             </span>
           </div>
 
