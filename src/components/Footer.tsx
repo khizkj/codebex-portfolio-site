@@ -65,10 +65,7 @@ const Footer = () => {
           {/* Company info */}
           <div className="lg:col-span-2">
             <div className="flex items-center space-x-2 mb-6">
-              <div className="p-2 bg-primary rounded-lg">
-                <Code2 className="h-6 w-6 text-white" />
-              </div>
-              <img src={logo} alt="Logo" className="h-8 w-8" />
+              <img src={logo} alt="Logo" className="h-10 w-10" />
               <span className="text-2xl font-bold">
                 Code <span className="text-primary-light">Bex</span>
               </span>

@@ -37,10 +37,7 @@ const Navigation = () => {
             className="flex items-center space-x-2 cursor-pointer"
             onClick={() => scrollToSection('hero')}
           >
-            <div className="p-2 bg-primary rounded-lg">
-              <Code2 className="h-6 w-6 text-white" />
-            </div>
-            <img src={logo} alt="Logo" className="h-8 w-8" />
+            <img src={logo} alt="Logo" className="h-10 w-10" />
             <span className={`text-2xl font-bold ${isScrolled ? 'text-foreground' : 'text-white'}`}>
               Code <span className={isScrolled ? 'text-primary' : 'text-white'}>Bex</span>
             </span>
