@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Code Bex Design System - Blue & Black Corporate Theme */
+
+@layer base {
+  :root {
+    /* Core Brand Colors */
+    --background: 0 0% 100%;
+    --foreground: 220 15% 20%;
+
+    /* Corporate Blue Theme */
+    --primary: 217 91% 35%;           /* Deep corporate blue */
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 217 91% 60%;     /* Lighter blue for gradients */
+    --primary-dark: 217 91% 25%;      /* Darker blue for depth */
+
+    /* Secondary Colors */
+    --secondary: 214 32% 91%;         /* Light gray-blue */
+    --secondary-foreground: 220 15% 25%;
+    --accent: 197 100% 63%;           /* Cyan accent */
+    --accent-foreground: 0 0% 100%;
+
+    /* Neutral Palette */
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 15% 20%;
+
+    /* Corporate Grays */
+    --gray-50: 220 14% 96%;
+    --gray-100: 220 13% 91%;
+    --gray-200: 220 13% 85%;
+    --gray-300: 220 9% 70%;
+    --gray-400: 220 9% 46%;
+    --gray-500: 220 9% 34%;
+    --gray-600: 220 15% 25%;
+    --gray-700: 220 15% 20%;
+    --gray-800: 220 15% 16%;
+    --gray-900: 220 15% 12%;
+
+    /* Functional Colors */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 217 91% 35%;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(217 91% 35%) 0%, hsl(220 15% 12%) 100%);
+    --gradient-card: linear-gradient(135deg, hsl(0 0% 100%) 0%, hsl(220 14% 96%) 100%);
+    --gradient-blue: linear-gradient(135deg, hsl(217 91% 35%) 0%, hsl(217 91% 60%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(197 100% 63%) 0%, hsl(217 91% 35%) 100%);
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(220 15% 20% / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(220 15% 20% / 0.1);
+    --shadow-lg: 0 10px 15px -3px hsl(220 15% 20% / 0.1);
+    --shadow-xl: 0 20px 25px -5px hsl(220 15% 20% / 0.1);
+    --shadow-glow: 0 0 20px hsl(217 91% 35% / 0.3);
+    --shadow-glow-hover: 0 0 30px hsl(217 91% 35% / 0.5);
+
+    /* Animations */
+    --transition-base: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-fast: all 0.15s ease-out;
+    --transition-slow: all 0.5s ease-out;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark theme for Code Bex */
+    --background: 220 15% 12%;
+    --foreground: 0 0% 100%;
+    --card: 220 15% 16%;
+    --card-foreground: 0 0% 100%;
+    --primary: 217 91% 60%;
+    --primary-foreground: 220 15% 12%;
+    --secondary: 220 15% 20%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 220 15% 16%;
+    --muted-foreground: 220 9% 70%;
+    --accent: 197 100% 63%;
+    --accent-foreground: 220 15% 12%;
+    --border: 220 15% 20%;
+    --input: 220 15% 20%;
+    --ring: 217 91% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Hero Button Variants */
+  .btn-hero {
+    @apply bg-gradient-to-r from-primary to-accent text-white px-8 py-4 rounded-lg font-semibold 
+           shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105
+           hover:shadow-[0_0_30px_hsl(217_91%_35%_/_0.5)] border-0;
+  }
+
+  .btn-secondary {
+    @apply bg-white/10 backdrop-blur-sm text-white border border-white/20 px-6 py-3 rounded-lg
+           font-medium hover:bg-white/20 hover:border-white/30 transition-all duration-300;
+  }
+
+  .btn-outline {
+    @apply border-2 border-primary text-primary bg-transparent px-6 py-3 rounded-lg font-medium
+           hover:bg-primary hover:text-white transition-all duration-300;
+  }
+
+  /* Card Components */
+  .card-gradient {
+    @apply bg-gradient-to-br from-white to-gray-50 border border-gray-200/50 rounded-xl p-6
+           shadow-sm hover:shadow-lg transition-all duration-300 transform hover:scale-105;
+  }
+
+  .card-service {
+    @apply bg-card border border-border rounded-xl p-8 shadow-sm hover:shadow-lg
+           transition-all duration-300 transform hover:scale-105 hover:border-primary/20;
+  }
+
+  /* Text Styles */
+  .heading-hero {
+    @apply text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight;
+  }
+
+  .heading-section {
+    @apply text-3xl md:text-4xl font-bold text-foreground mb-4;
+  }
+
+  .text-hero-subtitle {
+    @apply text-xl text-white/80 font-light leading-relaxed;
+  }
+
+  /* Background Patterns */
+  .bg-hero {
+    background: var(--gradient-hero);
+    background-attachment: fixed;
+  }
+
+  .bg-dots {
+    background-image: radial-gradient(circle, hsl(217 91% 35% / 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+
+  /* Animations */
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.8s ease-out forwards;
+    opacity: 0;
+    transform: translateY(30px);
+  }
+}
+
+@layer utilities {
+  /* Shadow utilities using design tokens */
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .shadow-glow-hover {
+    box-shadow: var(--shadow-glow-hover);
+  }
+
+  /* Transition utilities */
+  .transition-base {
+    transition: var(--transition-base);
+  }
+
+  .transition-fast {
+    transition: var(--transition-fast);
+  }
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 20px hsl(217 91% 35% / 0.3);
+  }
+  to {
+    box-shadow: 0 0 30px hsl(217 91% 35% / 0.6);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
